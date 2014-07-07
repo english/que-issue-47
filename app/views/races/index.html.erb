@@ -1,0 +1,25 @@
+<h1>Races</h1>
+
+<p>
+  Click <%= link_to "Create Race", races_path, method: :post %>.
+  After 5 seconds, the race's status should go from 'started' to 'finished'.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Created at</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @races.each do |race| %>
+      <tr>
+        <td><%= race.id %></td>
+        <td><%= race.created_at %></td>
+        <td><%= race.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
